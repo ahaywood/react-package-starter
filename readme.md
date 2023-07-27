@@ -13,7 +13,22 @@
 - Run the following command: `npx chromatic --project-token <your-project-token>`.
 - When complete, you’ll see the build status and a link to the published Storybook.
 
-## CI/CD
+# Scripts
+
+Within the `package.json` file, there are several scripts you can run:
+
+- `test` - Runs Jest unit tests
+- `test:ci` - Runs Jest unit tests in CI mode. The only difference between this and `test` is that it doesn't watch for changes.
+- `build` - Builds the library and preps it for publishing to npm
+- `storybook` - Runs Storybook
+- `build-storybook` - Builds Storybook
+- `lint` - Runs EsLint
+- `lint:fix` - Runs EsLint and fixes any issues it finds
+- `plop` - Runs PlopJS. You'll still need to specify what PlopJS script you want to run. Right now, the only available script is `component`.
+
+##
+
+# CI/CD
 
 - When you push code to the repo, stories will be published to [Chromatic](https://www.chromatic.com/). _NOTE: There's a little extra setup required to connect to Chromatic. (Detailed below)_
 - When code is pushed is pushed to the `main` branch or a new pull request is made, [CodeQL](https://codeql.github.com/) will run.
@@ -38,6 +53,18 @@ This is a starter repo for creating a UI component library. It uses:
 - [PlopJS](https://plopjs.com/)
 - [Prettier](https://prettier.io/) and [EsLint](https://eslint.org/)
 - [TailwindCSS](https://tailwindcss.com/)
+
+## Working with PlopJS
+
+[PlopJS](https://plopjs.com/) is A-MAZING for generating code. If you're really interested, I wrote a little [blog post describing some of my favorite use cases.](https://selfteachme.hashnode.dev/plopjs-the-tool-every-developer-needs-for-a-faster-workflow)
+
+Here, I'm using it to generate all the code needed for an individual component (a component file, a story, a unit test, and an index file).
+
+To use it, run `yarn plop component`. You'll be prompted for the name of your component. Then, PlopJS will create a new component folder inside of **src/components** with all the appropriate files.
+
+To change the files, edit the templates inside `plop-templates/component`.
+
+The plop script is located in **plopfile.mjs**.
 
 # Shout Outs
 
