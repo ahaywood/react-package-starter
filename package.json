@@ -10,7 +10,10 @@
     "test": "jest",
     "build": "rollup -c --bundleConfigAsCjs",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "plop": "plop"
   },
   "keywords": [
     "demo",
@@ -28,6 +31,8 @@
   "license": "MIT",
   "dependencies": {
     "autoprefixer": "latest",
+    "eslint-config-wesbos": "^3.2.3",
+    "plop": "^3.1.2",
     "postcss": "latest",
     "prop-types": "^15.8.1",
     "tailwindcss": "latest"
