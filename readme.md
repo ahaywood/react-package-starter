@@ -5,7 +5,6 @@
 
 # Roadmap
 
-- [ ] Install Tailwind
 - [ ] Set up Design Tokens
 - [ ] Get Plop up and running
 - [ ] Install Prettier
