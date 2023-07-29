@@ -26,8 +26,6 @@ Within the `package.json` file, there are several scripts you can run:
 - `lint:fix` - Runs EsLint and fixes any issues it finds
 - `plop` - Runs PlopJS. You'll still need to specify what PlopJS script you want to run. Right now, the only available script is `component`.
 
-##
-
 # CI/CD
 
 - When you push code to the repo, stories will be published to [Chromatic](https://www.chromatic.com/). _NOTE: There's a little extra setup required to connect to Chromatic. (Detailed below)_
