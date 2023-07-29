@@ -1,16 +1,21 @@
 import React from 'react';
-import type { ButtonProps } from './Button.types';
+import { MouseEventHandler } from 'react';
 
-const Button: React.FC<ButtonProps> = ({ text, onClick }) => {
+export interface ButtonProps {
+  label?: string;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
+}
+
+const Button = ({ label, onClick }): JSX.Element => {
   return (
     <button
       className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
       type="button"
       onClick={onClick}
     >
-      {text}
+      {label}
     </button>
   );
 };
 
-export default Button;
+export { Button };
